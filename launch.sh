@@ -101,6 +101,7 @@ pip install -r ~/Beholder-GAN/requirements-pip.txt
 conda deactivate
 
 # ─── End of Beholder-GAN setup ────────────────────────────────────────────────
+cd $HOME
 conda activate wav2lip
 cd ../..
 cd /root/encoder4editing/encoder4editing/models
