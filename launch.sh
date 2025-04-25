@@ -80,7 +80,15 @@ cd $HOME
 git clone https://github.com/omertov/encoder4editing.git
 cd encoder4editing
 source ~/miniconda3/etc/profile.d/conda.sh
-conda env create -f environment/e4e_env.yaml
+conda create -n e4e_env \
+  python=3.10 \
+  pytorch=1.11.0 \
+  torchvision=0.12.0 \
+  torchaudio=0.11.0 \
+  cudatoolkit=11.8 \
+  -c pytorch -c conda-forge
+conda activate e4e_env
+git clone https://github.com/omertov/encoder4editing.git
 
 # Clean up and set up a separate TF env
 conda deactivate
