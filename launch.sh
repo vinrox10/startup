@@ -41,7 +41,7 @@ sed -i 's/, *info="[^"]*"//g' ui.py
 pip install pydantic==2.10.6 --force-reinstall
 wget -O checkpoints/wav2lip.pth https://huggingface.co/numz/wav2lip_studio/resolve/main/Wav2lip/wav2lip.pth
 wget -O checkpoints/wav2lip_gan.pth "https://huggingface.co/numz/wav2lip_studio/resolve/main/Wav2lip/wav2lip_gan.pth"
-conda install -c conda-forge ffmpeg=4.3
+conda install -y -c conda-forge ffmpeg=4.3
 
 # 9) Real-ESRGAN-ncnn-vulkan CLI (optional)
 # wget https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan/releases/download/v0.2.5.0/realesrgan-ncnn-vulkan-20220424-ubuntu.zip -O realesrgan-ncnn-vulkan-20220424-ubuntu.zip
