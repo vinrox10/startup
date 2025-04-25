@@ -18,9 +18,6 @@ cd weights
 wget -O face_landmarker_v2_with_blendshapes.task \
   https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task
 
-cd ..
-
-
 # 3) Install Miniconda (silent mode)
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh -b -p "$HOME/miniconda3"
