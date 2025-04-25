@@ -43,6 +43,53 @@ wget -O checkpoints/wav2lip.pth https://huggingface.co/numz/wav2lip_studio/resol
 wget -O checkpoints/wav2lip_gan.pth "https://huggingface.co/numz/wav2lip_studio/resolve/main/Wav2lip/wav2lip_gan.pth"
 conda install -y -c conda-forge ffmpeg=4.3
 
+# ─── Insert Beholder-GAN setup here ────────────────────────────────────────────
+
+# Install SciPy into wav2lip env
+conda install -y scipy
+
+# Clone and set up Beholder-GAN
+cd "$HOME"
+git clone https://github.com/beholdergan/Beholder-GAN.git
+cd Beholder-GAN
+
+pip install "numpy>=1.13.3"
+pip install "scipy>=1.0.0"
+pip install --upgrade pip setuptools wheel
+pip install "moviepy>=0.2.3.2"
+pip install "Pillow>=3.1.1"
+pip install "lmdb>=0.93"
+pip install "opencv-python>=3.4.0.12"
+pip install "cryptography>=2.1.4"
+pip install "h5py>=2.7.1"
+pip install "six>=1.11.0"
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+pip install tensorflow
+
+# CUDA toolkit & cuDNN for Beholder-GAN
+conda install -y -c conda-forge cudatoolkit=11.8 cudnn=8.6
+pip install --upgrade tensorflow tensorflow-hub
+
+# Download model weights
+cd ~/Beholder-GAN
+mkdir -p models
+# requires gdown installed globally; if not, install via pip install gdown
+gdown --id 188K19ucknC6wg1R6jbuPEhTq9zoufOx4 -O models/
+
+# Clone and install encode-for-editing
+git clone https://github.com/eladrich/encode-for-editing.git
+cd encode-for-editing
+pip install -r requirements.txt
+
+# Clean up and set up a separate TF env
+conda deactivate
+conda create -n tf-beholder python=3.8 cudatoolkit=12.6 -c conda-forge -y
+# (activate it if you need to run Beholder-GAN in this env)
+# conda activate tf-beholder
+pip install --upgrade tensorflow tensorflow-hub
+pip install -r ~/Beholder-GAN/requirements-pip.txt
+
+# ─── End of Beholder-GAN setup ────────────────────────────────────────────────
 
 # cd ../..
 
