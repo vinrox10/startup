@@ -43,35 +43,9 @@ wget -O checkpoints/wav2lip.pth https://huggingface.co/numz/wav2lip_studio/resol
 wget -O checkpoints/wav2lip_gan.pth "https://huggingface.co/numz/wav2lip_studio/resolve/main/Wav2lip/wav2lip_gan.pth"
 conda install -y -c conda-forge ffmpeg=4.3
 
-# 9) Real-ESRGAN-ncnn-vulkan CLI (optional)
-# wget https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan/releases/download/v0.2.5.0/realesrgan-ncnn-vulkan-20220424-ubuntu.zip -O realesrgan-ncnn-vulkan-20220424-ubuntu.zip
-# apt update && apt install -y unzip
-# unzip realesrgan-ncnn-vulkan-20220424-ubuntu.zip -d realesrgan_bin
-# mv realesrgan_bin/realesrgan-ncnn-vulkan-20220424-ubuntu/realesrgan-ncnn-vulkan "$HOME/miniconda3/envs/wav2lip/bin/real-esrgan-ncnn-vulkan"
-# cp -r realesrgan_bin/realesrgan-ncnn-vulkan-20220424-ubuntu/models "$HOME/miniconda3/envs/wav2lip/bin/"
-# chmod +x "$HOME/miniconda3/envs/wav2lip/bin/real-esrgan-ncnn-vulkan"
 
-# 10) GFPGAN 1.4 (optional)
-# pip install gfpgan==1.3.8
-
-# 11) Install Vulkan loader for NVIDIA Tesla V100 (optional)
-# apt update
-# apt install -y libvulkan1 vulkan-tools mesa-vulkan-drivers
-
-# 12) GpuPixel Setup (optional)
-# git clone https://github.com/pixpark/gpupixel.git
-# cd gpupixel
-# mkdir -p build && cd build
-# sudo apt update && sudo apt install -y build-essential cmake libglfw3-dev libglew-dev libglm-dev libeigen3-dev libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libgl1-mesa-dev libegl1-mesa-dev libgles2-mesa-dev
-# cmake .. -DCMAKE_BUILD_TYPE=Release -DGPUPIXEL_BUILD_DESKTOP_DEMO=ON -DCMAKE_INSTALL_PREFIX=../output
-# make -j"$(nproc)"
-# make install
-# cd ../..
-# cd Wav2Lip-WebUI/gpupixel
-# mkdir -p build
-# ln -sf ../output/bin/app build/gpupixel_cli
 # cd ../..
 
-# 13) Launch the Gradio app
+# Final Step) Launch the Gradio app
 export GRADIO_SHARE=true
 python3 ui.py
