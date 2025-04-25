@@ -10,6 +10,17 @@ git lfs install
 git clone https://github.com/natlamir/Wav2Lip-WebUI.git
 cd Wav2Lip-WebUI
 
+# from inside /Wav2Lip-WebUI
+mkdir -p weights
+cd weights
+
+# download the face landmarker model
+wget -O face_landmarker_v2_with_blendshapes.task \
+  https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task
+
+cd ..
+
+
 # 3) Install Miniconda (silent mode)
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh -b -p "$HOME/miniconda3"
