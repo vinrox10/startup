@@ -79,7 +79,8 @@ gdown --id 188K19ucknC6wg1R6jbuPEhTq9zoufOx4 -O models/
 cd $HOME
 git clone https://github.com/omertov/encoder4editing.git
 cd encoder4editing
-
+source ~/miniconda3/etc/profile.d/conda.sh
+conda env create -f environment/e4e_env.yaml
 
 # Clean up and set up a separate TF env
 conda deactivate
