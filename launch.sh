@@ -53,6 +53,7 @@ cd "$HOME"
 git clone https://github.com/beholdergan/Beholder-GAN.git
 cd Beholder-GAN
 
+pip install mediapipe==0.10.21
 pip install "numpy>=1.13.3"
 pip install "scipy>=1.0.0"
 pip install --upgrade pip setuptools wheel
