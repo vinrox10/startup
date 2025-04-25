@@ -75,10 +75,11 @@ mkdir -p models
 pip install gdown
 gdown --id 188K19ucknC6wg1R6jbuPEhTq9zoufOx4 -O models/
 
-# Clone and install encode-for-editing
-git clone https://github.com/eladrich/encode-for-editing.git
-cd encode-for-editing
-pip install -r requirements.txt
+# 
+cd $HOME
+git clone https://github.com/omertov/encoder4editing.git
+cd encoder4editing
+
 
 # Clean up and set up a separate TF env
 conda deactivate
