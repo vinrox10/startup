@@ -90,6 +90,7 @@ conda create -n e4e_env \
 conda activate e4e_env
 git clone https://github.com/omertov/encoder4editing.git
 
+
 # Clean up and set up a separate TF env
 conda deactivate
 conda create -n tf-beholder python=3.8 cudatoolkit=12.6 -c conda-forge -y
@@ -97,8 +98,13 @@ conda create -n tf-beholder python=3.8 cudatoolkit=12.6 -c conda-forge -y
 # conda activate tf-beholder
 pip install --upgrade tensorflow tensorflow-hub
 pip install -r ~/Beholder-GAN/requirements-pip.txt
+conda deactivate
 
 # ─── End of Beholder-GAN setup ────────────────────────────────────────────────
+conda activate wav2lip
+cd ../..
+cd /root/encoder4editing/encoder4editing/models
+gdown --id 1cUv_reLE6k3604or78EranS7XzuVMWeO -O ffhq_e4e_encoder.pt
 
 # cd ../..
 
