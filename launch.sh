@@ -67,13 +67,12 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
 pip install tensorflow
 
 # CUDA toolkit & cuDNN for Beholder-GAN
-conda install -y -c conda-forge cudatoolkit=11.8 cudnn=8.6
 pip install --upgrade tensorflow tensorflow-hub
 
 # Download model weights
 cd ~/Beholder-GAN
 mkdir -p models
-# requires gdown installed globally; if not, install via pip install gdown
+pip install gdown
 gdown --id 188K19ucknC6wg1R6jbuPEhTq9zoufOx4 -O models/
 
 # Clone and install encode-for-editing
